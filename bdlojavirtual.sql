@@ -31,13 +31,13 @@ USE `bdlojavirtual`;
 
 DROP TABLE IF EXISTS `cliente`;
 CREATE TABLE `cliente` (
+  `cpf` varchar(18) NOT NULL,
   `nome` varchar(20) NOT NULL,
-  `email` varchar(40) NOT NULL,
-  `cpf` varchar(25) NOT NULL,
-  `endereco` varchar(40) NOT NULL,
+  `email` varchar(60) NOT NULL,
+  `endereco` varchar(60) NOT NULL,
   `telefone` varchar(20) NOT NULL,
-  `cep` varchar(30) NOT NULL,
-  `cidade` varchar(15) NOT NULL
+  `cep` varchar(15) NOT NULL,
+  `cidade` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -82,6 +82,10 @@ ALTER TABLE `produto`
 --
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`login`);
+COMMIT;
+
+ALTER TABLE `cliente`
+  ADD PRIMARY KEY (`cpf`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
